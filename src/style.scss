@@ -1,0 +1,144 @@
+@import url('../medias/fonts/PS2P.css');
+
+html{
+  padding: 0; margin: 0;
+}
+body{
+  padding: 0;margin: 0;
+  background-color: #2a4365;
+}
+
+.loading{
+  font-family: "Press Start 2P", MONOSPACE;
+  color: white;
+  font-size: 2em;
+  line-height: 1.5em;
+  padding: 0 0.5em;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: left;
+  color: #2c3e50;
+  margin: 10px auto 0;
+  max-width: 640px;
+  font-size: 11px;
+  max-height: calc(100vh - 20px);
+  height: calc(100vh - 20px);
+  overflow: hidden;
+  a{
+    color: #f6ad55;
+    outline-offset: 0.5em;
+    outline-color: #f6ad55;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #app{
+    margin-top: 0;
+    min-height: calc(100vh);
+    max-height: calc(100vh);
+    height: 100vh;
+    font-size: 10px;
+  }
+}
+
+#container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#picture{
+  position: relative;
+  img{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 1.0;
+    transition: opacity 0.4s;
+    
+    &.hide{
+      opacity: 0.0;
+    }
+  }
+}
+
+#status{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-family: "Press Start 2P", MONOSPACE;
+  background-color: #f7fafc;
+  line-height: 1.5em;
+  background: linear-gradient(0deg, #ccc, #fff), white;
+  
+  #location{ padding: 0.2em 0.5em;}
+  #exits{ 
+    padding: 0.2em 0.5em;
+    text-align: right;
+    svg{height: 12px;}
+    ul{
+      display: inline;
+      padding-left: 0.5em;
+      li{display: inline-block; margin-right: 0.5em;
+        &::after{
+          content: "|"
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+    #exits{
+      ul{
+        li{margin-right: 1em;
+          &:last-children{margin-right: 0.5em;}
+        }
+      }
+    }
+  }
+}
+
+#text {
+  width: 100%;
+  text-align: left;
+  font-family: "Press Start 2P", MONOSPACE;
+  background-color: #f7fafc;
+  line-height: 1.5em;
+
+
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  min-height: 0;
+
+  p{
+    opacity: 1.0;
+    transition: opacity 1.0s;
+  }
+  p.hide{
+    opacity: 0.0
+  }
+
+  #story{
+    padding: 0.1em 1em;
+    flex-shrink: 2;
+    min-height: 0;
+    overflow: scroll;
+  }
+  #choices{
+    flex-shrink: 1;
+    padding: 0.1em 1em;  
+    a{
+      text-decoration: none;
+    }
+    a::before{
+      content: "> "
+    }
+  }
+  
+}

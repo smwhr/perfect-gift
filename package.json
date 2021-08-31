@@ -1,0 +1,43 @@
+{
+  "name": "inkjam20201",
+  "author": "Ju/smwhr",
+  "description": "Inkjam2021 - Fiction Interactive",
+  "license": "CC-BY-SA-4.0",
+  "version": "0.1.0",
+  "main": "dist/electron.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && tsc src/electron.ts --outDir dist && node scripts/distPackage.js",
+    "serve": "vite preview",
+    "start": "yarn build && electron ./dist/electron.js",
+
+    "ink": "inklecate -o data/Inkjam2021.ink.json ink/Inkjam2021.ink && node scripts/cleanJson.js data/Inkjam2021.ink.json",
+    
+    "butler:html": "butler push dist smwhr/a-perfect-gift:html",
+    "butler:osx": "butler push Inkjam2021-darwin-x64 smwhr/a-perfect-gift:osx",
+    "butler:linux": "butler push Inkjam2021-linux-x64 smwhr/a-perfect-gift:linux",
+    "butler:win": "butler push Inkjam2021-win32-x64 smwhr/a-perfect-gift:win",
+    
+    "package:osx": "electron-packager dist Inkjam2021 --platform=darwin --arch=x64 --icon=resources/Icon.icns --prune --overwrite",
+    "package:linux": "electron-packager dist Inkjam2021 --platform=linux --arch=x64 --icon=resources/Icon.icns --prune --overwrite",
+    "package:win": "electron-packager dist Inkjam2021 --platform=win32 --arch=x64 --icon=resources/Icon1024.png.ico --prune --overwrite --win32metadata.ProductName='Inkjam2021' --win32metadata.CompanyName='smwhr' --win32metadata.FileDescription='Inkjam2021' --win32metadata.OriginalFilename='Inkjam2021' --win32metadata.InternalName='Inkjam2021'",
+    
+    "release:html": "yarn build && yarn butler:html",
+    "release:osx:local": "yarn build && yarn package:osx && open Inkjam2021-darwin-x64/Inkjam2021.app",
+    "release:osx": "yarn build && yarn package:osx && yarn butler:osx",
+    "release:linux": "yarn build && yarn package:linux && yarn butler:linux",
+    "release:win": "yarn build && yarn package:win && yarn butler:win",
+
+    "upload:html": "yarn build && butler push dist smwhr/a-perfect-gift:html"
+  },
+  "devDependencies": {
+    "electron": "^13.2.1",
+    "electron-packager": "^15.3.0",
+    "sass": "^1.38.0",
+    "typescript": "^4.3.2",
+    "vite": "^2.4.4"
+  },
+  "dependencies": {
+    "inkjs": "^2.0.0"
+  }
+}

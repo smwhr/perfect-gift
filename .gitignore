@@ -1,0 +1,14 @@
+node_modules
+.DS_Store
+yarn-error.log
+
+dist-ssr
+*.local
+backgrounds
+originals
+resources/Icon.icns
+
+dist
+BlablaBlues-darwin-x64
+BlablaBlues-linux-x64
+BlablaBlues-win32-x64

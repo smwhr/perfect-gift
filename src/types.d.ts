@@ -1,0 +1,1 @@
+type NamedImage = [string, InstanceType<typeof Image>]
