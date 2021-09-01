@@ -162,6 +162,9 @@ You are in a very fancy and hipster neighborhood.
     ->apartment
 
 == apartment
+# LOCATION: 14 rue Lagrenouille (upstairs)
+# PICTURE: apartment
+
 This is not your first time here. The apartment is huge but ou never went past the vestibule.
 On the wall {not KnowPhotoWife: you notice the|there {HasPhotoWife: used to be|is} a} picture of a short-haired, blonde woman, practicing yoga.
 ~ KnowPhotoWife = true
