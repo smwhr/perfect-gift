@@ -22,8 +22,8 @@ jobs:
         url: "https://github.com/inkle/ink/releases/download/v1.0.0/inklecate_linux.zip"
         pathInArchive: "."
     - name: Testing
-        run: |
-          inklecate
+      run: |
+        inklecate
     - name: install app dependencies and build it
       run: yarn && yarn ink && yarn build
     
