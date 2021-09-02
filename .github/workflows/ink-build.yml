@@ -1,0 +1,29 @@
+name: "publish"
+on:
+  workflow_dispatch
+
+jobs:
+  publish-tauri:
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [macos-latest, ubuntu-latest, windows-latest]
+
+    runs-on: ubunto-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: setup node
+      uses: actions/setup-node@v1
+      with:
+        node-version: 16
+    - uses: engineerd/configurator@v0.0.1
+      with:
+        name: "inklecate"
+        url: "https://github.com/inkle/ink/releases/download/v1.0.0/inklecate_linux.zip"
+        pathInArchive: "."
+     - name: Testing
+        run: |
+          inklecate
+    - name: install app dependencies and build it
+      run: yarn && yarn ink && yarn build
+    
