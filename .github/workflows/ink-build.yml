@@ -19,7 +19,7 @@ jobs:
         urlTemplate: "https://github.com/inkle/ink/releases/download/{{version}}/inklecate_linux.zip"
         version: "latest"
         token: ${{ secrets.GITHUB_TOKEN }}
-        pathInArchive: "."
+        pathInArchive: "inklecate"
     - name: Testing
       run: |
         ls /home/runner/configurator/bin/
