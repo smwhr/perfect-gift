@@ -14,10 +14,16 @@ jobs:
     - uses: engineerd/configurator@v0.0.8
       with:
         name: "inklecate"
-        url: "https://github.com/inkle/ink/releases/download/v1.0.0/inklecate_linux.zip"
+        fromGitHubReleases: "true"
+        repo: "inkle/ink"
+        urlTemplate: "https://github.com/inkle/ink/releases/download/{{version}}/inklecate_linux.zip"
+        version: "latest"
+        token: ${{ secrets.GITHUB_TOKEN }}
         pathInArchive: "."
     - name: Testing
       run: |
+        ls /home/runner/configurator/bin/
+        /home/runner/configurator/bin/inklecate
         inklecate
     - name: install app dependencies and build it
       run: yarn && yarn ink && yarn build
