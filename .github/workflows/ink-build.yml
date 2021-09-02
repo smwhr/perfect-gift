@@ -20,11 +20,11 @@ jobs:
         version: "latest"
         token: ${{ secrets.GITHUB_TOKEN }}
         pathInArchive: "inklecate"
-    - name: Testing
-      run: |
-        ls /home/runner/configurator/bin/
-        /home/runner/configurator/bin/inklecate
-        inklecate
-    - name: install app dependencies and build it
+    - name: install, build ink, build website
       run: yarn && yarn ink && yarn build
+    - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: dist # The folder the action should deploy.
     
