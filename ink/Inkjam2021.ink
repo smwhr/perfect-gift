@@ -225,7 +225,7 @@ A woman smiles behing the counter.
     You search but find nothing. 
     ->please_come_back
 + {KnowPhotoMis or KnowPhotoWife and (not HasPhotoMis and not HasPhotoWife)} I know where I can find one...
-        -> panoramas
+        -> please_come_back
 + {HasPhotoMis} Hand the photo of the woman horse-riding
     -> gift_receive_for("mis")
 + {HasPhotoWife} Hand the photo of the woman practicing yoga
