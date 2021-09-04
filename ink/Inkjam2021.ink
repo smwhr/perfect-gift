@@ -281,17 +281,17 @@ Your boss is waiting on the curb.
 
 {Gift == "wife": 
     The lady is very pleased with the gift.
-    Once more, you saved the day.
+    Once more, you saved the day. (Ending 3 of 3)
     }
 {Gift == "mis":
     The lady gets suddenly angry, throws wine at your boss and leaves. 
     How will you handle the incident tomorrow ? 
-    I guess... you'll think of something !
+    I guess... you'll think of something ! (Ending 2 of 3)
     }
 {Gift == "me":
     The lady looks nonplussed by the gift. But the sellers was right. This is truly the perfect gift for you. 
     How will you take it back ? 
-    I guess... you'll think of something !
+    I guess... you'll think of something ! (Ending 1 of 3)
     }
 
 -
